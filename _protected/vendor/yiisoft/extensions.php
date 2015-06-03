@@ -3,6 +3,24 @@
 $vendorDir = dirname(__DIR__);
 
 return array (
+  'nenad/yii2-widgets-base' => 
+  array (
+    'name' => 'nenad/yii2-widgets-base',
+    'version' => '2.0.0.0',
+    'alias' => 
+    array (
+      '@nenad' => $vendorDir . '/nenad/yii2-widgets-base',
+    ),
+  ),
+  'nenad/yii2-password-strength' => 
+  array (
+    'name' => 'nenad/yii2-password-strength',
+    'version' => '2.2.0.0',
+    'alias' => 
+    array (
+      '@nenad/passwordStrength' => $vendorDir . '/nenad/yii2-password-strength',
+    ),
+  ),
   'yiisoft/yii2-swiftmailer' => 
   array (
     'name' => 'yiisoft/yii2-swiftmailer',

@@ -6,3 +6,4 @@ use yii\helpers\Html;
 <br>
 Действие Контроллера: <span class="label label-success"><?= $this->context->action->id; ?></span>
 <br><br>
+<?php var_dump($model); ?>
