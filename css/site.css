@@ -1,0 +1,122 @@
+/* ===================================================================
+   Style Reset
+=================================================================== */
+HTML {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+BODY {line-height: 1;padding: 0;margin: 0;background-color: #f9faff; font-family: "Lucida Console";/*Times New Roman*/}
+
+/* ===================================================================
+   0) Base
+=================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    color: #555;
+    background: #EFEFEF;
+}
+    /* Main Div */
+#page {
+    width: 1100px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: white;
+    border: 1px solid #C9E0ED;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: #D8D8D8 -3px 3px 5px, #D8D8D8 3px 3px 5px;
+}
+
+/* ===================================================================
+   1) Header
+=================================================================== */
+#header {
+    margin: 0;
+    padding: 0;
+    background-color: #ECFFEC; /* #D9FFD9; */
+    text-align: center;
+    min-height: 80px;
+    border-radius: 8px 8px 0px 0px;
+}
+    #logo {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 20px;
+        line-height: 80px;
+    }
+
+/* ===================================================================
+   3) Panel Menu (bootstrap)
+=================================================================== */
+.navbar {
+    background-color: #E7ECFA; /* #E7E8FE; */
+    border: 1px solid silver;
+    margin-bottom: 0px;
+    overflow: hidden;
+    min-height: 40px;
+}
+    .nav { margin-left: 60px; overflow: hidden;}
+        .navbar-default .navbar-nav > li { border-left: 1px solid silver; }
+        .navbar ul:last-child { border-right: 1px solid silver; }
+        .navbar ul:first-child { border-right: 1px solid silver; }       
+            .navbar-default .navbar-nav > li > a {
+                color: black;
+                font-size: 14px;
+                font-family: Calibri;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                /*line-height: */
+            }
+            .navbar-nav > li:hover, .navbar-nav > li:focus {
+              color: #2a6496;
+              background-color: white;
+            }
+
+/* ===================================================================
+   3) Content
+=================================================================== */
+#content {
+  padding: 5px;
+    background-color: #F8F8F8; /* #FDF6E3; #EFF5F5; */
+}
+    #ContentBox {
+        padding: 5px;
+        font-size: 17px;
+        border-radius: 10px;
+        min-height: 550px;
+        font-family: "Times New Roman";
+        line-height: 24px;
+    }
+
+    /* 3.1) Общие стили оформления
+    =================================================================== */
+            /* Заголовок contrAction/view */
+        #ContentBoxTitle {
+            margin-top: 8px;
+            font-family: "Lucida Console";
+            font-size: 20px;
+            text-align: center;
+        }
+
+    /* 3.2) Переопределение стилей Bootstrap
+    =================================================================== */
+        .label { padding-bottom: 2px; font-size: 14px; }
+
+    /* 3.3) Переопределение стилей Bootstrap TABLE
+    =================================================================== */
+        .table-striped > tbody > tr:nth-child(2n+1) > td {
+            background-color: #FDFDFD;
+        }
+
+/* ===================================================================
+   4) Footer
+=================================================================== */
+#footer {
+    text-align: center;
+    min-height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #E8EBF0; /* #D7F2FB; */
+    border-radius: 0px 0px 8px 8px;
+}

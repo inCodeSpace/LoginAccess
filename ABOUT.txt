@@ -1,0 +1,20 @@
+Реализация шаблона с изменением пути web на корневой доступ (делалось как заготовка для заливки на cloudcontrolled)
+1) Заливка базового своего измененного шаблона _LIB\!FrameWorkTemplate\basic1
+2) Изменение иерархии папок:
+- Создать папку _protected перенести в нее:
+  > все папки
+    assets по идее не нужен
+  > файлы requirements.php, yii, yii.bat
+  > перенести все содержимое из папки web в _protected, папку web удалить, index-test.php и .htaccess удалить.
+3) Изменение записей в путях файлов:
+- В файле \index.php :
+  > закоментить 2-е 1-е строки кода
+  > заменить код на:
+    require(__DIR__ . '/_protected/vendor/autoload.php');
+    require(__DIR__ . '/_protected/vendor/yiisoft/yii2/Yii.php');
+    $config = require(__DIR__ . '/_protected/config/web.php');
+- В файле _protected\requirements.php изменить: 
+  $frameworkPath на dirname(__FILE__) . '_protected/vendor/yiisoft/yii2';
+- В файле _protected\config\urlManager.php
+    оставить пустой массив: return [];
+4) Теперь можно попробовать работоспособность на домашнем сервере (сайт будет работать по прямому пути)
