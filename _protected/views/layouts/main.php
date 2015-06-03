@@ -31,25 +31,34 @@ AppAsset::register($this);
 
   <!-- 2) PanelMenu -->
     <nav class="navbar navbar-default" role="navigation">
+    <?php
+        // Реализация вывода ссылок меню, относительно условия
+        $menuItems = [
+            ['label' => 'Home', 'url' => ['/primary/index']],
+            ['label' => 'HomeTest', 'url' => ['/primary/test']],
+            ['label' => 'TestCont', 'url' => ['/test/index']],
+        ];
+        if (Yii::$app->user->isGuest) {
+            $menuItems[] = ['label' => 'Зарегистрироваться', 'url' => ['/test/signup']];
+            $menuItems[] = ['label' => 'Войти', 'url' => ['/test/login']];
+        } else {
+            $menuItems[] = [
+                'label' => 'Выйти (' . Yii::$app->user->identity->username . ')',
+                'url' => ['/test/logout'],
+                // добавление ссылке тип вызова методом post (как если исп. Boots NavBar)
+                // для возможн. обращ. к действию контроллера (т.к. он ограничен access-ом)
+                'template' => '<a href="{url}" data-method="post">{label}</a>',
+            ];
+        }
+    ?>
     <?= Menu::widget([
-
             'options' => [
                 'class' => 'nav navbar-nav',
-                'id' => 'yw0', // не сильно нужно
+                'id' => 'yw0',
             ],
-
             'itemOptions' => [
-                // 'class' => 'navBoxUrl',
-                // 'tag' => 'div',
             ],
-            
-            // 'linkTemplate' => '<a href="{url}" class="navUrl">{label}</a>',
-
-            'items' => [
-                ['label' => 'Home', 'url' => ['/primary/index']],
-                ['label' => 'HomeTest', 'url' => ['/primary/test']],
-                ['label' => 'TestCont', 'url' => ['/test/index']],
-            ],
+            'items' => $menuItems, // сюда подставится массив ссылок (в зависимости от условий выполн. выше)
         ]);
     ?>
     </nav>
