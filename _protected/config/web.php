@@ -3,7 +3,7 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-    'name' => 'fwTemplate', // 1) Установить имя app
+    'name' => 'LoginAccess', // 1) Установить имя app
     'defaultRoute' => 'primary/index', // 2) Установить default controller
     'id' => 'basic1',
     'language'=>'ru', // Опция так же изм. язык сообщений об ошибках при заполн. форм

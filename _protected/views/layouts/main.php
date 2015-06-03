@@ -49,12 +49,6 @@ AppAsset::register($this);
                 ['label' => 'Home', 'url' => ['/primary/index']],
                 ['label' => 'HomeTest', 'url' => ['/primary/test']],
                 ['label' => 'TestCont', 'url' => ['/test/index']],
-
-                ['label' => 'TestTest', 'url' => ['/test/test']],
-
-                ['label' => 'Создать Табл. с данными', 'url' => ['/test/test1']],
-                ['label' => 'Зачитать данные', 'url' => ['/test/test2']],
-                ['label' => 'Удалить Таблицу', 'url' => ['/test/test3']],
             ],
         ]);
     ?>
