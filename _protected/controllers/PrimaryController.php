@@ -5,7 +5,6 @@ use yii\web\Controller;
 
 class PrimaryController extends Controller
 {
-    public $layout='..\_layouts\main';
 
     public function actionIndex()
     {
