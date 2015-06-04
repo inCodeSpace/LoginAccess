@@ -37,9 +37,11 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/primary/index']],
             ['label' => 'HomeTest', 'url' => ['/primary/test']],
             ['label' => 'TestCont', 'url' => ['/test/index']],
+            ['label' => 'Action&Access', 'url' => ['/test/access0']],
         ];
         if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => 'Зарегистрироваться', 'url' => ['/test/signup']];
+            // Закоментированно для заливки на сервер
+            // $menuItems[] = ['label' => 'Зарегистрироваться', 'url' => ['/test/signup']];
             $menuItems[] = ['label' => 'Войти', 'url' => ['/test/login']];
         } else {
             $menuItems[] = [

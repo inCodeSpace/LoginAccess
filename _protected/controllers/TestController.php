@@ -6,7 +6,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\models\LoginForm;
-use app\models\SignupForm;
+//use app\models\SignupForm;
 
 class TestController extends Controller
 {
@@ -39,6 +39,8 @@ class TestController extends Controller
         return $this->goHome(); // отправить его на главную
     }
 
+/*
+Закоментировано для заливки на сервер (что бы не было возможности забить базу данных, новыми пользователями)
     public function actionSignup()
     {
         $model = new SignupForm(); // Создается объект модели
@@ -48,9 +50,9 @@ class TestController extends Controller
             // Вызвать метод модели SignupForm::signup (Попробовать выполнить успешно)
             if ($user = $model->signup()) { // в случае успеха сюда
                 // придет объект модели User с заполненными полями (который так же, будет implements IdentityInterface)
-                /* Залогинится используя Yii:
-                    - Вернуть пользовательский компонент и залогинить его передав
-                      в него объект пользователя (Попробовать выполнить успешно) */
+                // Залогинится используя Yii:
+                    // - Вернуть пользовательский компонент и залогинить его передав
+                    //  в него объект пользователя (Попробовать выполнить успешно)
                 if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome(); // отправить его на главную
                 }
@@ -61,13 +63,23 @@ class TestController extends Controller
             'model' => $model,
         ]);
     }
+*/
+
+    /**
+     * Данное действие будет доступно только для залогиненых пользователей
+     * Если пользователь не залогинен, его перенаправит на /test/login
+    */
+    public function actionAccess0()
+    {
+        return $this->render('index');
+    }
 
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'], // распростроняется только на действие logout, signup
+                'only' => ['logout', 'signup', 'access0'], // распростроняется только на действие logout, signup, access0
                 'rules' => [
                     [
                         'actions' => ['signup'], // для действия signup
@@ -75,7 +87,7 @@ class TestController extends Controller
                         'roles' => ['?'], // гостям
                     ],
                     [
-                        'actions' => ['logout'], // для действия logout
+                        'actions' => ['logout', 'access0'], // для действия logout и access0
                         'allow' => true, // разрешить обращение
                         'roles' => ['@'], // залогиненым пользователям
                     ],

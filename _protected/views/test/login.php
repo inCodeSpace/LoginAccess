@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php ActiveForm::end(); ?>
 
     <div class="col-lg-offset-1" style="color:#999;">
-        Можно зайти с помощью: <b>Ken: 123456</b><br>
-        Эти данные (для БД) лежат в <b>app\models\User::$users</b> <code>и должны быть в БД!</code>
+        Можно зайти с помощью: <b>creator01: 123creator01321</b><br>
+        <code>данные должны быть в БД!</code>
     </div>
 </div>

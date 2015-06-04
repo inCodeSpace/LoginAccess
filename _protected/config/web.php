@@ -20,6 +20,8 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            // редирект для действия по умолчанию (вместо site/login)
+            'loginUrl' => ['/test/login'],
         ],
         'errorHandler' => [
             'errorAction' => 'primary/error', // 3) Установить default controller errorAction
@@ -51,8 +53,8 @@ if (YII_ENV_DEV) {
     // $config['bootstrap'][] = 'debug';
     // $config['modules']['debug'] = 'yii\debug\Module';
 
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = 'yii\gii\Module';
+    // $config['bootstrap'][] = 'gii';
+    // $config['modules']['gii'] = 'yii\gii\Module';
 }
 
 return $config;
